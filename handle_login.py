@@ -3,7 +3,9 @@
 import requests
 from scrapy import Selector
 
+# 论坛网址
 base_url = 'http://xxxxxxxxxs6qbnahsbvxbghsnqh4rj6whbyblqtnmetf7vell2fmxmad.onion/'
+# 代理
 proxy = {'http': 'socks5h:127.0.0.1:9050'}
 # 账号用户名和密码
 username = 'username'
@@ -15,7 +17,7 @@ index_url = base_url + "entrance/logins.php"
 session = requests.session()
 session.proxies = proxy
 
-
+# 获取验证码
 def get_chapter():
     res = session.get(login_url)
     selector = Selector(res)
@@ -23,7 +25,7 @@ def get_chapter():
     with open('./chapter.png', 'wb') as f:
         f.write(session.get(img_url).content)
 
-
+# 需要识别验证码,手动填入
 def login():
     code = input("请输入验证码:")
     post_data = {

@@ -6,9 +6,12 @@
 
 ## 代理设置
 
+因为在暗网,需要通过tor代理访问
+
 1. 安装tor
 2. 如果在墙内需要设置前置代理
-3. python的代理需要设置为socks5h
+   在`/etc/tor/torrc`结尾添加 `socks5Proxy 127.0.0.1:1080`
+3. python的代理需要设置为`{'http': 'socks5h:127.0.0.1:9050'}`
 
 ### socks5h和socks5的区别
 

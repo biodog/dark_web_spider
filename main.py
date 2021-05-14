@@ -3,6 +3,7 @@ from handle_login import session, base_url
 from scrapy import Selector
 
 
+# 解析网页,写入txt文件
 def parse_html(html):
     select = Selector(text=html)
     table = select.css('table.u_ea_a')
@@ -19,6 +20,7 @@ def parse_html(html):
 
 
 if __name__ == '__main__':
+    # 要爬取的页数
     page_num = 287
     url_list = [base_url + 'ea.php?ea=10001&pagea=%s' % str(i + 1) for i in range(page_num)]
     for url in url_list:
