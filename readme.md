@@ -15,9 +15,9 @@
 
 ### socks5h和socks5的区别
 
-socks5h由socks server解析hostname
+socks5h由socks5 server解析hostname
 
-socks5由本地解析hostname
+socks5由本机解析hostname
 
 
 
